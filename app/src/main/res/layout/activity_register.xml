@@ -1,0 +1,61 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="@dimen/margin_large"
+    android:background="@color/backgroundColor">
+
+    <!-- Título -->
+    <TextView
+        android:id="@+id/tvTituloRegistro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/titulo_registro"
+        android:textSize="@dimen/text_size_title"
+        android:textStyle="bold"
+        android:textColor="@color/primaryColor"
+        android:layout_marginBottom="@dimen/margin_large"/>
+
+    <!-- Campo de correo -->
+    <EditText
+        android:id="@+id/txtEmail"
+        android:hint="@string/hint_email"
+        android:inputType="textEmailAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_medium"
+        android:padding="@dimen/margin_small"
+        android:backgroundTint="@color/primaryColor"/>
+
+    <!-- Campo de contraseña -->
+    <EditText
+        android:id="@+id/txtPassword"
+        android:hint="@string/hint_password"
+        android:inputType="textPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_medium"
+        android:padding="@dimen/margin_small"
+        android:backgroundTint="@color/primaryColor"/>
+
+    <!-- Confirmar contraseña -->
+    <EditText
+        android:id="@+id/txtConfirmPassword"
+        android:hint="@string/hint_confirm_password"
+        android:inputType="textPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_large"
+        android:padding="@dimen/margin_small"
+        android:backgroundTint="@color/primaryColor"/>
+
+    <!-- Botón de registro -->
+    <Button
+        android:id="@+id/btnRegister"
+        android:text="@string/btn_registrar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:background="@color/primaryColor"
+        android:textColor="@color/backgroundColor"/>
+</LinearLayout>

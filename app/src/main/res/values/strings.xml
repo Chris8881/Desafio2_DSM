@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">DesafioDSM_2</string>
+        <!-- General -->
+        <string name="btn_guardar">Guardar</string>
+        <string name="btn_cancelar">Cancelar</string>
+        <string name="btn_editar">Editar</string>
+        <string name="btn_eliminar">Eliminar</string>
+
+        <!-- Login & Registro -->
+        <string name="titulo_login">Iniciar Sesión</string>
+        <string name="titulo_registro">Registrar Usuario</string>
+        <string name="hint_email">Correo electrónico</string>
+        <string name="hint_password">Contraseña</string>
+        <string name="hint_confirm_password">Confirmar contraseña</string>
+        <string name="btn_login">Ingresar</string>
+        <string name="btn_registrar">Registrarse</string>
+        <string name="txt_ir_a_registro">¿No tienes cuenta? Regístrate aquí</string>
+
+        <!-- Menú -->
+        <string name="titulo_menu">Menú Principal</string>
+        <string name="btn_productos">Productos</string>
+        <string name="btn_clientes">Clientes</string>
+        <string name="btn_ventas">Ventas</string>
+        <string name="btn_logout">Cerrar sesión</string>
+
+        <!-- Productos -->
+        <string name="titulo_productos">Gestión de Productos</string>
+        <string name="txt_nombre_producto">Nombre del producto</string>
+        <string name="txt_descripcion">Descripción</string>
+        <string name="txt_precio">Precio</string>
+        <string name="txt_stock">Stock</string>
+
+        <!-- Clientes -->
+        <string name="titulo_clientes">Gestión de Clientes</string>
+        <string name="hint_nombre_cliente">Nombre del cliente</string>
+        <string name="hint_correo_cliente">Correo</string>
+        <string name="hint_telefono_cliente">Teléfono</string>
+
+        <!-- Ventas -->
+        <string name="titulo_ventas">Registro de Ventas</string>
+        <string name="btn_registrar_venta">Registrar Venta</string>
+        <string name="txt_total">Total:</string>
+        <string name="hint_cantidad">Cantidad</string>
+    <string name="historial_de_ventas">Historial de Ventas</string>
+    <string name="iniciar_con_github">Iniciar con GitHub</string>
+    <string name="iniciar_con_facebook">Iniciar con Facebook</string>
+
+
+</resources>

@@ -1,0 +1,42 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor">
+
+    <!-- Título -->
+    <TextView
+        android:id="@+id/tvTituloClientes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/titulo_clientes"
+        android:textSize="@dimen/text_size_title"
+        android:textColor="@color/primaryColor"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/margin_large"/>
+
+    <!-- Lista de clientes -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerClientes"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tvTituloClientes"
+        android:layout_above="@id/fabAgregarCliente"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:padding="@dimen/margin_small"
+        android:clipToPadding="false"/>
+
+    <!-- Botón flotante para agregar -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAgregarCliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="@dimen/margin_large"
+        android:contentDescription="@string/btn_registrar"
+        app:backgroundTint="@color/primaryColor"
+        app:tint="@color/backgroundColor"
+        app:srcCompat="@android:drawable/ic_input_add"/>
+</RelativeLayout>

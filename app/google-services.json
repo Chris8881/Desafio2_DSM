@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "171160264543",
+    "firebase_url": "https://desafio2db-default-rtdb.firebaseio.com",
+    "project_id": "desafio2db",
+    "storage_bucket": "desafio2db.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:171160264543:android:005e9ecc80c0566d0e60ea",
+        "android_client_info": {
+          "package_name": "com.example.desafio2_dsm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "171160264543-3gm7tal16tt67p8m5c7qvjnja9gqsejp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9FdbIsTdgmF_Oykdqz2nbnwnW8BqF9aQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "171160264543-3gm7tal16tt67p8m5c7qvjnja9gqsejp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:171160264543:android:037185e55372bc910e60ea",
+        "android_client_info": {
+          "package_name": "com.example.desafiodsm_2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "171160264543-3gm7tal16tt67p8m5c7qvjnja9gqsejp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9FdbIsTdgmF_Oykdqz2nbnwnW8BqF9aQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "171160264543-3gm7tal16tt67p8m5c7qvjnja9gqsejp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

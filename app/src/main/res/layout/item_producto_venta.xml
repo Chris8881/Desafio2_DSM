@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_small"
+    card_view:cardCornerRadius="8dp"
+    card_view:cardElevation="4dp"
+    android:background="@color/backgroundColor"
+    android:foreground="?android:attr/selectableItemBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/margin_medium"
+        android:gravity="center_vertical">
+
+        <!-- CheckBox -->
+        <CheckBox
+            android:id="@+id/cbSeleccionar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/primaryColor"/>
+
+        <!-- Info del producto -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="@dimen/margin_small"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tvNombreVenta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_nombre_producto"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_size_medium"
+                android:textColor="@color/textPrimary"/>
+
+            <TextView
+                android:id="@+id/tvPrecioVenta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_precio"
+                android:textSize="@dimen/text_size_small"
+                android:textColor="@color/textSecondary"/>
+
+            <TextView
+                android:id="@+id/tvStockVenta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_stock"
+                android:textSize="@dimen/text_size_small"
+                android:textColor="@color/textSecondary"/>
+
+            <!-- Cantidad -->
+            <EditText
+                android:id="@+id/etCantidad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_cantidad"
+                android:inputType="number"
+                android:background="@android:drawable/edit_text"
+                android:ems="4"
+                android:padding="@dimen/margin_small"
+                android:layout_marginTop="@dimen/margin_small"/>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

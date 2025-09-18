@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="@dimen/margin_large"
+    android:background="@color/backgroundColor">
+
+    <!-- Título -->
+    <TextView
+        android:id="@+id/tvBienvenida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/titulo_menu"
+        android:textSize="@dimen/text_size_title"
+        android:textStyle="bold"
+        android:textColor="@color/primaryColor"
+        android:layout_marginBottom="@dimen/margin_large"/>
+
+    <!-- Botón de Productos -->
+    <Button
+        android:id="@+id/btnProductos"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:text="@string/btn_productos"
+        android:background="@color/primaryColor"
+        android:textColor="@color/backgroundColor"
+        android:layout_marginBottom="@dimen/margin_medium"/>
+
+    <!-- Botón de Clientes -->
+    <Button
+        android:id="@+id/btnClientes"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:text="@string/btn_clientes"
+        android:background="@color/primaryColor"
+        android:textColor="@color/backgroundColor"
+        android:layout_marginBottom="@dimen/margin_medium"/>
+
+    <!-- Botón de Ventas -->
+    <Button
+        android:id="@+id/btnVentas"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:text="@string/btn_ventas"
+        android:background="@color/primaryColor"
+        android:textColor="@color/backgroundColor"
+        android:layout_marginBottom="@dimen/margin_large"/>
+
+    <!-- Botón de Logout -->
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:text="@string/btn_logout"
+        android:background="@color/accentColor"
+        android:textColor="@color/backgroundColor"/>
+</LinearLayout>

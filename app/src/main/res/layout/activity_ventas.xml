@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    android:padding="@dimen/margin_medium">
+
+  <!-- Título -->
+  <TextView
+      android:id="@+id/tvTituloVentas"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:text="@string/titulo_ventas"
+      android:textSize="@dimen/text_size_title"
+      android:textStyle="bold"
+      android:textColor="@color/primaryColor"
+      android:gravity="center"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      android:layout_marginBottom="@dimen/margin_large" />
+
+  <!-- Selector de cliente -->
+  <TextView
+      android:id="@+id/lblCliente"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/hint_nombre_cliente"
+      android:textSize="@dimen/text_size_medium"
+      android:textStyle="bold"
+      android:textColor="@color/textPrimary"
+      app:layout_constraintTop_toBottomOf="@id/tvTituloVentas"
+      app:layout_constraintStart_toStartOf="parent" />
+
+  <Spinner
+      android:id="@+id/spinnerClientes"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="@dimen/margin_medium"
+      app:layout_constraintTop_toBottomOf="@id/lblCliente"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent" />
+
+  <!-- Lista de productos -->
+  <TextView
+      android:id="@+id/lblProductos"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/titulo_productos"
+      android:textSize="@dimen/text_size_medium"
+      android:textStyle="bold"
+      android:textColor="@color/textPrimary"
+      app:layout_constraintTop_toBottomOf="@id/spinnerClientes"
+      app:layout_constraintStart_toStartOf="parent" />
+
+  <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/recyclerProductosVenta"
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      android:clipToPadding="false"
+      android:padding="@dimen/margin_small"
+      app:layout_constraintTop_toBottomOf="@id/lblProductos"
+      app:layout_constraintBottom_toTopOf="@id/tvTotal"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent" />
+
+  <!-- Total -->
+  <TextView
+      android:id="@+id/tvTotal"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:text="@string/txt_total"
+      android:textSize="@dimen/text_size_large"
+      android:textStyle="bold"
+      android:textColor="@color/primaryColor"
+      android:gravity="end"
+      android:layout_marginTop="@dimen/margin_small"
+      android:layout_marginBottom="@dimen/margin_medium"
+      app:layout_constraintBottom_toTopOf="@id/btnRegistrarVenta"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent" />
+
+  <!-- Botón de registrar venta -->
+  <Button
+      android:id="@+id/btnRegistrarVenta"
+      android:layout_width="0dp"
+      android:layout_height="@dimen/button_height"
+      android:text="@string/btn_registrar_venta"
+      android:textColor="@color/backgroundColor"
+      android:backgroundTint="@color/primaryColor"
+      android:textStyle="bold"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
