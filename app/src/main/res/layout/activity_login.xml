@@ -60,14 +60,19 @@
 
     <Button
         android:id="@+id/btnGithub"
-        android:layout_width="match_parent"
+        android:layout_width="188dp"
         android:layout_height="wrap_content"
-        android:text="@string/iniciar_con_github" />
+        android:backgroundTint="@color/black"
+        android:text="@string/iniciar_con_github"
+        android:textColor="@android:color/white" />
 
-    <Button
+
+    <com.facebook.login.widget.LoginButton
         android:id="@+id/btnFacebook"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/iniciar_con_facebook" />
+        android:text="@string/login_con_facebook" />
+
+
 
 </LinearLayout>

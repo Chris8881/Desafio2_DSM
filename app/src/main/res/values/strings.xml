@@ -46,4 +46,9 @@
     <string name="iniciar_con_facebook">Iniciar con Facebook</string>
 
 
+    <string name="facebook_app_id">790736630152023</string>
+    <string name="fb_login_protocol_scheme">fb790736630152023</string>
+    <string name="facebook_client_token">e3b3659850cd91bc96e50d49d87a7b2f</string>
+    <string name="login_con_facebook">Login con Facebook</string>
+
 </resources>

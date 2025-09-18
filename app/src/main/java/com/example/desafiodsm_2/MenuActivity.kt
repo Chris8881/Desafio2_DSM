@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.facebook.login.LoginManager
 
 class MenuActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
@@ -39,9 +40,23 @@ class MenuActivity : AppCompatActivity() {
 
         // cerrar sesión y volver al login
         btnLogout.setOnClickListener {
-            auth.signOut()
-            startActivity(Intent(this, LoginActivity::class.java))
-            finish()
+            cerrarSesion()
         }
+    }
+
+    private fun cerrarSesion() {
+        // Cerrar sesión de Firebase
+        auth.signOut()
+
+        // Cerrar sesión de Facebook (si el usuario estaba autenticado con Facebook)
+        LoginManager.getInstance().logOut()
+
+        // Nota: si en un futuro agregas Google Sign-In, también deberías cerrar Google aquí
+
+        // Redirigir al login
+        val intent = Intent(this, LoginActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(intent)
+        finish()
     }
 }
