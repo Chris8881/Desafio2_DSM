@@ -6,10 +6,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.desafiodsm_2.R
+import com.example.desafiodsm_2.model.Cliente
 import com.example.desafiodsm_2.model.Venta
 
 class VentaAdapter(
-    private val lista: MutableList<Venta>
+    private val listaVentas: MutableList<Venta>,
+    private val listaClientes: MutableList<Cliente>
 ) : RecyclerView.Adapter<VentaAdapter.VentaViewHolder>() {
 
     class VentaViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -25,17 +27,16 @@ class VentaAdapter(
     }
 
     override fun onBindViewHolder(holder: VentaViewHolder, position: Int) {
-        val venta = lista[position]
+        val venta = listaVentas[position]
 
-        // 🔹 Mostrar cliente (en este caso clienteId, pero puedes cambiarlo por el nombre real si lo traes)
-        holder.tvCliente.text = "Cliente: ${venta.clienteId}"
+        // Buscar cliente relacionado
+        val cliente = listaClientes.find { it.id == venta.clienteId }
 
-        // 🔹 Mostrar fecha
+        // Mostrar nombre si existe, de lo contrario mostrar el ID
+        holder.tvCliente.text = "Cliente: ${cliente?.nombre ?: "ID ${venta.clienteId}"}"
         holder.tvFecha.text = "Fecha: ${venta.fecha}"
-
-        // 🔹 Mostrar total
         holder.tvTotal.text = "Total: $${venta.total}"
     }
 
-    override fun getItemCount(): Int = lista.size
+    override fun getItemCount(): Int = listaVentas.size
 }

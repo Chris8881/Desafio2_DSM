@@ -1,5 +1,6 @@
 package com.example.desafiodsm_2
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -20,6 +21,7 @@ class VentasActivity : AppCompatActivity() {
     private lateinit var recyclerProductos: RecyclerView
     private lateinit var tvTotal: TextView
     private lateinit var btnRegistrar: Button
+    private lateinit var btnHistorial: Button
 
     private lateinit var dbRef: DatabaseReference
     private val uid = FirebaseAuth.getInstance().currentUser?.uid ?: ""
@@ -28,20 +30,18 @@ class VentasActivity : AppCompatActivity() {
     private val listaProductos = mutableListOf<Producto>()
     private lateinit var adapter: ProductoVentaAdapter
 
-    // aquí guardamos lo que el usuario selecciona (id del producto -> cantidad)
     private val productosSeleccionados = mutableMapOf<String, Int>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ventas)
 
-        // referencias de la vista
         spinnerClientes = findViewById(R.id.spinnerClientes)
         recyclerProductos = findViewById(R.id.recyclerProductosVenta)
         tvTotal = findViewById(R.id.tvTotal)
         btnRegistrar = findViewById(R.id.btnRegistrarVenta)
+        btnHistorial = findViewById(R.id.btnHistorialVentas)
 
-        // configuramos recycler
         recyclerProductos.layoutManager = LinearLayoutManager(this)
         adapter = ProductoVentaAdapter(listaProductos) { producto, cantidad, seleccionado ->
             if (seleccionado && cantidad > 0) {
@@ -53,20 +53,20 @@ class VentasActivity : AppCompatActivity() {
         }
         recyclerProductos.adapter = adapter
 
-        // referencia principal a Firebase
         dbRef = FirebaseDatabase.getInstance().getReference("usuarios/$uid")
 
-        // cargamos clientes y productos
         cargarClientes()
         cargarProductos()
 
-        // botón registrar
-        btnRegistrar.setOnClickListener {
-            registrarVenta()
+        btnRegistrar.setOnClickListener { registrarVenta() }
+
+        // botón historial abre HistorialVentasActivity
+        btnHistorial.setOnClickListener {
+            val intent = Intent(this, HistorialVentasActivity::class.java)
+            startActivity(intent)
         }
     }
 
-    // leer clientes desde firebase
     private fun cargarClientes() {
         dbRef.child("clientes").addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
@@ -92,7 +92,6 @@ class VentasActivity : AppCompatActivity() {
         })
     }
 
-    // leer productos desde firebase
     private fun cargarProductos() {
         dbRef.child("productos").addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
@@ -110,19 +109,15 @@ class VentasActivity : AppCompatActivity() {
         })
     }
 
-    // calcular el total en base a lo que se selecciona
     private fun calcularTotal() {
         var total = 0.0
         for ((id, cantidad) in productosSeleccionados) {
             val producto = listaProductos.find { it.id == id }
-            producto?.let {
-                total += it.precio * cantidad
-            }
+            producto?.let { total += it.precio * cantidad }
         }
         tvTotal.text = "Total: $${total}"
     }
 
-    // registrar la venta y actualizar stock
     private fun registrarVenta() {
         if (productosSeleccionados.isEmpty()) {
             Toast.makeText(this, "Selecciona al menos un producto", Toast.LENGTH_SHORT).show()
@@ -142,14 +137,11 @@ class VentasActivity : AppCompatActivity() {
         var total = 0.0
         val detalle = mutableMapOf<String, Int>()
 
-        // recorremos productos seleccionados
         for ((id, cantidad) in productosSeleccionados) {
             val producto = listaProductos.find { it.id == id }
             producto?.let {
                 total += it.precio * cantidad
                 detalle[id] = cantidad
-
-                // actualizar stock en Firebase
                 val nuevoStock = it.stock - cantidad
                 dbRef.child("productos").child(id).child("stock").setValue(nuevoStock)
             }
@@ -163,7 +155,6 @@ class VentasActivity : AppCompatActivity() {
             fecha = fecha
         )
 
-        // guardar la venta en firebase
         dbRef.child("ventas").child(ventaId).setValue(venta)
             .addOnSuccessListener {
                 Toast.makeText(this, "Venta registrada con éxito", Toast.LENGTH_SHORT).show()

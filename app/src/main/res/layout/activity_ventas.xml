@@ -91,6 +91,19 @@
       android:textColor="@color/backgroundColor"
       android:backgroundTint="@color/primaryColor"
       android:textStyle="bold"
+      app:layout_constraintBottom_toTopOf="@id/btnHistorialVentas"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent" />
+
+  <!-- Botón de historial de ventas -->
+  <Button
+      android:id="@+id/btnHistorialVentas"
+      android:layout_width="0dp"
+      android:layout_height="@dimen/button_height"
+      android:text="Ver Historial de Ventas"
+      android:textColor="@color/backgroundColor"
+      android:backgroundTint="@color/secondaryColor"
+      android:textStyle="bold"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintEnd_toEndOf="parent" />
